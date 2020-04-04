@@ -65,6 +65,7 @@ set formatoptions-=l
 set formatoptions+=t
 
 set showmatch
+set showcmd
 
 "ctags setting
 let Tlist_Ctags_Cmd ='/usr/bin/ctags'
