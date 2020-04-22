@@ -1,4 +1,3 @@
-set nocompatible
 " allow backspaceing over everything in insert mode
 set bs=indent,eol,start 
 
