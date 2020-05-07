@@ -32,11 +32,13 @@ autocmd ColorScheme *
     \ hi User2 ctermbg=DarkBlue ctermfg=Yellow guibg=DarkBlue guifg=Red |
     \ hi User3 ctermbg=White ctermfg=Green guibg=White guifg=DarkBlue |
     \ hi User4 ctermbg=White ctermfg=Blue guibg=DarkBlue guifg=Red |
-    \ hi User5 term=bold cterm=bold ctermfg=17 ctermbg=190 gui=bold guifg=#00005f guibg=#dfff00
+    \ hi User5 term=bold cterm=bold ctermfg=17 ctermbg=190 gui=bold guifg=#00005f guibg=#dfff00 |
+    \ hi User6 ctermfg=190 ctermbg=238
 
 "hi! StatusLine ctermfg=White ctermbg=DarkGreen
 set statusline =\ %5*%{Get_Mode()}%*
-set statusline=\ [%4*%-6.100F%*]
+set statusline+=\ %6*[%-6.100F]%*
+" set statusline+=\ [%4*%-6.100F%*]
 set statusline+=\ %2*%r%*
 set statusline+=%w
 set statusline+=\ %1*%m%*
