@@ -49,8 +49,8 @@ set laststatus=2
 
 au ColorScheme * hi Search ctermbg=Yellow ctermfg=Black
 " set the tab-completion motion
-" set wildmode=longest:list 
-set wildmode=list:full
+set wildmode=longest:list
+" set wildmode=list:full
 " completation appearance
 set completeopt=menu,noinsert
 " for input-line test
