@@ -13,6 +13,17 @@ set number
 
 set background=light
 colorscheme default
+
+function! Get_Mode()
+    let mode_opts = {'n': 'Normal', 'no': 'Operator-pending', 'v': 'visual', 'V': 'VISUAL', 'CTRL-V': 'VB', 'i': 'Insert', 'R': 'Replace', 's': 'Select', 'S': 'Select', 'CTRL-S': 'Select'}
+    let mode = mode()
+    if has_key(mode_opts, mode)
+        return mode_opts[mode]
+    else
+        echo "get mode error!!!"
+    endif
+endfunc
+
 " set status line
 " colorscheme will run hi clear, which clear you own color settings so need
 " autocmd to keep you color settings
@@ -20,8 +31,11 @@ autocmd ColorScheme *
     \ hi User1 ctermbg=DarkBlue ctermfg=Red guibg=DarkBlue guifg=Red |
     \ hi User2 ctermbg=DarkBlue ctermfg=Yellow guibg=DarkBlue guifg=Red |
     \ hi User3 ctermbg=White ctermfg=Green guibg=White guifg=DarkBlue |
-    \ hi User4 ctermbg=White ctermfg=Blue guibg=DarkBlue guifg=Red
+    \ hi User4 ctermbg=White ctermfg=Blue guibg=DarkBlue guifg=Red |
+    \ hi User5 term=bold cterm=bold ctermfg=17 ctermbg=190 gui=bold guifg=#00005f guibg=#dfff00
+
 "hi! StatusLine ctermfg=White ctermbg=DarkGreen
+set statusline =\ %5*%{Get_Mode()}%*
 set statusline=\ [%4*%-6.100F%*]
 set statusline+=\ %2*%r%*
 set statusline+=%w
