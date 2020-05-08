@@ -82,6 +82,9 @@ set formatoptions+=t
 set showmatch
 set showcmd
 
+" enable help all doc, include from the thirdpart
+silent! helptags ALL
+
 "ctags setting
 let Tlist_Ctags_Cmd ='/usr/bin/ctags'
 let Tlist_Exit_OnlyWindow = 1
