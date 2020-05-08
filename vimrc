@@ -15,7 +15,19 @@ set background=light
 colorscheme default
 
 function! Get_Mode()
-    let mode_opts = {'n': 'Normal', 'no': 'Operator-pending', 'v': 'visual', 'V': 'VISUAL', 'CTRL-V': 'VB', 'i': 'Insert', 'R': 'Replace', 's': 'Select', 'S': 'Select', 'CTRL-S': 'Select'}
+    let mode_opts =
+        \ {
+            \ 'n': 'Normal',
+            \ 'no': 'Operator-pending',
+            \ 'v': 'visual',
+            \ 'V': 'VISUAL',
+            \ 'CTRL-V': 'VB',
+            \ 'i': 'Insert',
+            \ 'R': 'Replace',
+            \ 's': 'Select',
+            \ 'S': 'Select',
+            \ 'CTRL-S': 'Select'
+        \ }
     let mode = mode()
     if has_key(mode_opts, mode)
         return mode_opts[mode]
@@ -110,14 +122,14 @@ if has("cscope")
     set csverb
 endif
 let cs_auto_jump = 0
-nmap <C-\>s :cs find s <C-R>=expand("<cword>")<CR><CR>:copen<CR>
-nmap <C-\>g :cs find g <C-R>=expand("<cword>")<CR><CR>
-nmap <C-\>c :cs find c <C-R>=expand("<cword>")<CR><CR>:copen<CR>
-nmap <C-\>t :cs find t <C-R>=expand("<cword>")<CR><CR>:copen<CR>
-nmap <C-\>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR>
-nmap <C-\>d :cs find d <C-R>=expand("<cword>")<CR><CR>:copen<CR>
-nmap <C-\>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:copen<CR>
-nmap <C-\>i :cs find i <C-R>=expand("<cfile>")<CR><CR>:copen<CR>
+nmap <C-_>s :cs find s <C-R>=expand("<cword>")<CR><CR>:copen<CR>
+nmap <C-_>g :cs find g <C-R>=expand("<cword>")<CR><CR>
+nmap <C-_>c :cs find c <C-R>=expand("<cword>")<CR><CR>:copen<CR>
+nmap <C-_>t :cs find t <C-R>=expand("<cword>")<CR><CR>:copen<CR>
+nmap <C-_>e :cs find e <C-R>=expand("<cword>")<CR><CR>:copen<CR>
+nmap <C-_>d :cs find d <C-R>=expand("<cword>")<CR><CR>:copen<CR>
+nmap <C-_>f :cs find f <C-R>=expand("<cfile>")<CR><CR>:copen<CR>
+nmap <C-_>i :cs find i <C-R>=expand("<cfile>")<CR><CR>:copen<CR>
 
 "map <F1> :copen<CR>
 map <F2> :ccl<CR>
