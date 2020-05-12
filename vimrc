@@ -105,7 +105,7 @@ let Tlist_File_Fold_Auto_Close= 1
 let Tlist_Inc_Winwidth = 0
 
 "cscope setting
-" set cscopequickfix=s-,c-,d-,i-,t-,e-
+set cscopequickfix=s-,c-,d-,i-,t-,e-
 if has("cscope")
     set csprg=/usr/bin/cscope
     set csto=0
