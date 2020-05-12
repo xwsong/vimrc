@@ -33,6 +33,7 @@ function! Get_Mode()
         return mode_opts[mode]
     else
         echo "get mode error!!!"
+        return "LOVE AND PEACE"
     endif
 endfunc
 
