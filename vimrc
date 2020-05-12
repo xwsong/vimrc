@@ -40,14 +40,13 @@ endfunc
 " colorscheme will run hi clear, which clear you own color settings so need
 " autocmd to keep you color settings
 autocmd ColorScheme *
-    \ hi User1 ctermbg=DarkBlue ctermfg=Red guibg=DarkBlue guifg=Red |
-    \ hi User2 ctermbg=DarkBlue ctermfg=Yellow guibg=DarkBlue guifg=Red |
+    \ hi User1 ctermbg=238 ctermfg=Red guibg=DarkBlue guifg=Red |
+    \ hi User2 ctermbg=238 ctermfg=Yellow guibg=DarkBlue guifg=Red |
     \ hi User3 ctermbg=White ctermfg=Green guibg=White guifg=DarkBlue |
     \ hi User4 ctermbg=White ctermfg=Blue guibg=DarkBlue guifg=Red |
     \ hi User5 term=bold cterm=bold ctermfg=17 ctermbg=190 gui=bold guifg=#00005f guibg=#dfff00 |
-    \ hi User6 ctermfg=190 ctermbg=238
+    \ hi User6 ctermfg=36 ctermbg=238
 
-"hi! StatusLine ctermfg=White ctermbg=DarkGreen
 set statusline =\ %5*%{Get_Mode()}%*
 set statusline+=\ %6*[%-6.100F]%*
 " set statusline+=\ [%4*%-6.100F%*]
@@ -58,10 +57,12 @@ set statusline+=%=
 set statusline+=%l,%c
 set statusline+=\ %p%%
 " set statusline+=\ %3*%y%*
-set statusline+=\ [%3*%{&fileformat}%*]
+set statusline+=\ %5*[%{&fileformat}]%*
 set laststatus=2
 
-au ColorScheme * hi Search ctermbg=Yellow ctermfg=Black
+au ColorScheme * hi! Search cterm=inverse
+au ColorScheme * hi! Statusline ctermfg=238 ctermbg=Gray
+au ColorScheme * hi! StatuslineNC ctermfg=238 ctermbg=Gray
 " set the tab-completion motion
 set wildmode=longest:list
 " set wildmode=list:full
