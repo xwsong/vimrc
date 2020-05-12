@@ -88,7 +88,7 @@ if filewritable(expand("%"))
 endif
 
 "set the text max length per line
-set textwidth=78
+set textwidth=80
 set formatoptions-=l
 set formatoptions+=t
 
