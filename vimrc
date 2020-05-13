@@ -11,6 +11,10 @@ set viminfo='100,<50,s10,%
 set number
 "set ruler
 
+set confirm
+
+set pastetoggle=<F12>
+
 set background=light
 colorscheme default
 
