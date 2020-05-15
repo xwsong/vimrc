@@ -47,14 +47,13 @@ endfunc
 autocmd ColorScheme *
     \ hi User1 ctermbg=238 ctermfg=Red guibg=DarkBlue guifg=Red |
     \ hi User2 ctermbg=238 ctermfg=Yellow guibg=DarkBlue guifg=Red |
-    \ hi User3 ctermbg=White ctermfg=Green guibg=White guifg=DarkBlue |
+    \ hi User3 ctermbg=238 ctermfg=Green guibg=White guifg=DarkBlue |
     \ hi User4 ctermbg=White ctermfg=Blue guibg=DarkBlue guifg=Red |
-    \ hi User5 term=bold cterm=bold ctermfg=17 ctermbg=190 gui=bold guifg=#00005f guibg=#dfff00 |
+    \ hi User5 cterm=bold ctermfg=17 ctermbg=190 gui=bold guifg=#00005f guibg=#dfff00 |
     \ hi User6 ctermfg=36 ctermbg=238
 
 set statusline =\ %5*%{Get_Mode()}%*
 set statusline+=\ %6*[%-6.100F]%*
-" set statusline+=\ [%4*%-6.100F%*]
 set statusline+=\ %2*%r%*
 set statusline+=%w
 set statusline+=\ %1*%m%*
@@ -65,9 +64,11 @@ set statusline+=\ %p%%
 set statusline+=\ %5*[%{&fileformat}]%*
 set laststatus=2
 
-au ColorScheme * hi! Search cterm=inverse
 au ColorScheme * hi! Statusline ctermfg=238 ctermbg=Gray
-au ColorScheme * hi! StatuslineNC ctermfg=238 ctermbg=Gray
+au ColorScheme * hi! StatuslineNC cterm=bold ctermfg=238 ctermbg=Gray 
+" inverse color on search result
+au ColorScheme * hi! Search cterm=inverse
+
 " set the tab-completion motion
 set wildmode=longest:list
 " set wildmode=list:full
@@ -162,10 +163,6 @@ function! GotoJump()
 endfunction
 
 nmap <Leader>jj :call GotoJump()<CR>
-
-"grep
-":nnoremap <leader>g :grep -R '<cword>' .<cr>
-":nnoremap <leader>g :silent execute "grep! -R " . shellescape(expand("<cword>")) . " ."<cr>:copen<cr>
 
 function! SaveFile()
     if filewritable(bufname("%")) && getbufvar("%","&modified")
