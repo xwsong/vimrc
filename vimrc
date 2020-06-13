@@ -80,6 +80,9 @@ set completeopt=menu,noinsert
 set undofile 
 set undodir=/home/songxiongwei/.vim/undodir
 
+set cursorline
+autocmd ColorScheme * hi! Cursorline cterm=bold ctermbg=236 guibg=Grey90 |
+   \ hi! CursorLineNr cterm=bold ctermfg=85 ctermbg=236 guibg=Grey90
 " let swp_path = "~/.vim/swp" . "\," . &directory
 " let &directory = swp_path
 "set directory=~/.vim/swp
