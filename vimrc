@@ -190,3 +190,20 @@ augroup savemyfiles
     au!
     au QuitPre *.c,*.h,*.txt,*.sh,*.py,*.vim call SaveAllFiles()
 augroup END
+
+call plug#begin('~/.vim/plugged')
+
+" speed up cursor move
+Plug 'https://github.com/easymotion/vim-easymotion.git'
+
+call plug#end()
+
+" esaymotion
+map  <Leader>f <Plug>(easymotion-bd-f)
+nmap <Leader>f <Plug>(easymotion-overwin-f)
+
+nmap <Leader>j <Plug>(easymotion-sol-j)
+nmap <Leader>k <Plug>(easymotion-sol-k)
+
+nmap <Leader>w <Plug>(easymotion-w)
+nmap <Leader>w <Plug>(easymotion-overwin-w)
